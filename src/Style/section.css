@@ -1,0 +1,17 @@
+section{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+}
+
+
+.divMain{
+    width: 200px;
+    height: 200px;
+    border: solid black 5px;
+    margin: 0px;
+    padding: 0px;
+}

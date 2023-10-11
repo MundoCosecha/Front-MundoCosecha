@@ -1,0 +1,34 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  --bg-color: #66350d;
+  --text-color: #118602;  
+  --body-color: #acf09b;
+  --main-color: #1ac03b;
+  --nav-color: #000000;
+  --header-color: #0f758f;
+  --navText-color: #ffffff;
+}
+body{
+  background: var(--body-color);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+header{
+  background: var(--header-color);
+  height: 400px;
+  width: 100%;
+  background-image: url("https://www.bbva.com/wp-content/uploads/2021/05/BBVA-huertos-hidropo%CC%81nicos-sostenibilidad-campo-renovable.jpg");
+  background-size: cover;
+}
+
+
+footer{
+  box-shadow: 0px 0px 15px var(--nav-color) inset;
+}
