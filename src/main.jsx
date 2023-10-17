@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import { Login } from './page/Login.jsx'
 import { Register } from './page/Register.jsx'
+import { Catalogo } from './page/Catalogo.jsx'
 
 
 const routes = [
@@ -13,12 +14,16 @@ const routes = [
     element: <App />,
   },
   {
-    path: '/Registro',
+    path: '/registro',
     element: <Register />,
   },
   {
-    path: '/Login',
+    path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/catalogo',
+    element: <Catalogo />,
   }
 
 ]

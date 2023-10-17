@@ -12,25 +12,24 @@ export const Navbar = () => {
   }
 
   return (
-    <nav>
-      <a href="#" className="logo"
-      ><span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></a>
-      <ul className="navbar">
-        <li>
-          <a href="#" className="active"
-          ><i className="ri-home-heart-fill"></i>Home</a>
-        </li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">contact</a></li>
-        <li><a href="#">service</a></li>
-        <li><a href="#">blog</a></li>
-      </ul>
-      <div className="Users">
-        <Link to={'/Login'} className="user" ><i className="ri-user-2-fill"></i><span>Sign In</span></Link>
-        <Link to={'/Registro'} className="user" >
-          <i className="ri-user-add-fill"></i><span>Register</span></Link>
-        <div className="bx bx-menu" id="menu-icon" onClick={menu}></div>
-      </div>
-    </nav>
+      <nav>
+        <a href="#" className="logo"
+        ><span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></a>
+        <ul className="navbar">
+          <li>
+            <a href="#" className="active"><i className="ri-home-heart-fill"></i>Home</a>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">contact</a></li>
+          <li><a href="#">service</a></li>
+          <li> <Link to={'/catalogo'}><i className="ri-store-2-fill"></i>Catalogo</Link> </li>
+        </ul>
+        <div className="Users">
+          <Link to={'/login'} className="user" ><i className="ri-user-2-fill"></i><span>Sign In</span></Link>
+          <Link to={'/registro'} className="user" >
+            <i className="ri-user-add-fill"></i><span>Register</span></Link>
+          <div className="bx bx-menu" id="menu-icon" onClick={menu}></div>
+        </div>
+      </nav>
   )
 }

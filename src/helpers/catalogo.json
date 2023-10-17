@@ -1,0 +1,161 @@
+{
+    "plantas": [
+      {
+        "nombre": "Rosa",
+        "especie": "Rosa spp.",
+        "descripcion": "Una flor hermosa y fragante conocida por su variedad de colores y formas.",
+        "tipo": "Flor",
+        "requerimientos": {
+          "agua": "Moderado",
+          "luz": "Pleno sol",
+          "suelo": "Fértil y bien drenado"
+        },
+        "cuidados": "Riego regular y poda ocasional para promover el crecimiento.",
+        "imagen": "rosa.jpg"
+      },
+      {
+        "nombre": "Tomate",
+        "especie": "Solanum lycopersicum",
+        "descripcion": "Una planta frutal cultivada por sus sabrosos tomates rojos.",
+        "tipo": "Hortaliza",
+        "requerimientos": {
+          "agua": "Regular",
+          "luz": "Pleno sol",
+          "suelo": "Fértil y bien drenado"
+        },
+        "cuidados": "Riego regular y poda de hojas enfermas para prevenir enfermedades.",
+        "imagen": "tomate.jpg"
+      },
+      {
+        "nombre": "Suculenta de jade",
+        "especie": "Crassula ovata",
+        "descripcion": "Una planta suculenta popular por su apariencia de hojas carnosas y suerte asociada.",
+        "tipo": "Suculenta",
+        "requerimientos": {
+          "agua": "Bajo",
+          "luz": "Luz brillante indirecta",
+          "suelo": "Bien drenado"
+        },
+        "cuidados": "Riego mínimo y evitar la luz solar directa excesiva.",
+        "imagen": "suculenta.jpg"
+      },
+      {
+        "nombre": "Lavanda",
+        "especie": "Lavandula angustifolia",
+        "descripcion": "Una planta aromática con flores moradas y un agradable aroma.",
+        "tipo": "Hierba",
+        "requerimientos": {
+          "agua": "Bajo",
+          "luz": "Pleno sol",
+          "suelo": "Bien drenado"
+        },
+        "cuidados": "Poda regular y recolección de flores para hacer aceite de lavanda.",
+        "imagen": "lavanda.jpg"
+      },
+      {
+        "nombre": "Menta",
+        "especie": "Mentha spp.",
+        "descripcion": "Una hierba refrescante utilizada en bebidas y cocina.",
+        "tipo": "Hierba",
+        "requerimientos": {
+          "agua": "Moderado",
+          "luz": "Luz parcial",
+          "suelo": "Húmedo y bien drenado"
+        },
+        "cuidados": "Mantener bajo control, ya que puede propagarse fácilmente.",
+        "imagen": "menta.jpg"
+      },
+      {
+        "nombre": "Orquídea Phalaenopsis",
+        "especie": "Phalaenopsis spp.",
+        "descripcion": "Una hermosa orquídea con flores exóticas en varios colores.",
+        "tipo": "Orquídea",
+        "requerimientos": {
+          "agua": "Moderado",
+          "luz": "Luz brillante indirecta",
+          "suelo": "Sustrato de orquídea"
+        },
+        "cuidados": "Riego semanal y abono específico para orquídeas.",
+        "imagen": "orquidea.jpg"
+      },
+      {
+        "nombre": "Cactus de San Pedro",
+        "especie": "Echinopsis pachanoi",
+        "descripcion": "Un cactus alto y columnar con propiedades alucinógenas.",
+        "tipo": "Cactus",
+        "requerimientos": {
+          "agua": "Bajo",
+          "luz": "Pleno sol",
+          "suelo": "Suelo arenoso y bien drenado"
+        },
+        "cuidados": "Poca agua y cuidado al manipularlo debido a sus espinas.",
+        "imagen": "cactus.jpg"
+      },
+      {
+        "nombre": "Helecho Boston",
+        "especie": "Nephrolepis exaltata",
+        "descripcion": "Un helecho con hojas plumosas y decorativas.",
+        "tipo": "Helecho",
+        "requerimientos": {
+          "agua": "Moderado",
+          "luz": "Luz brillante indirecta",
+          "suelo": "Húmedo y bien drenado"
+        },
+        "cuidados": "Mantener el sustrato húmedo y rociar las hojas regularmente.",
+        "imagen": "helecho.jpg"
+      },
+      {
+        "nombre": "Ruda",
+        "especie": "Ruta graveolens",
+        "descripcion": "Una planta con hojas aromáticas utilizadas en remedios naturales.",
+        "tipo": "Hierba",
+        "requerimientos": {
+          "agua": "Bajo",
+          "luz": "Pleno sol",
+          "suelo": "Bien drenado"
+        },
+        "cuidados": "Poda regular y protección contra las heladas.",
+        "imagen": "ruda.jpg"
+      },
+      {
+        "nombre": "Lirio",
+        "especie": "Lilium spp.",
+        "descripcion": "Una flor elegante y fragante en una variedad de colores.",
+        "tipo": "Flor",
+        "requerimientos": {
+          "agua": "Moderado",
+          "luz": "Luz brillante indirecta",
+          "suelo": "Fértil y bien drenado"
+        },
+        "cuidados": "Riego regular y protección contra plagas.",
+        "imagen": "lirio.jpg"
+      },
+      {
+        "nombre": "Aloe Vera",
+        "especie": "Aloe barbadensis miller",
+        "descripcion": "Una planta suculenta con propiedades medicinales para la piel.",
+        "tipo": "Suculenta",
+        "requerimientos": {
+          "agua": "Bajo",
+          "luz": "Luz brillante indirecta",
+          "suelo": "Bien drenado"
+        },
+        "cuidados": "Riego moderado y uso de gel de aloe en quemaduras de piel.",
+        "imagen": "aloe.jpg"
+      },
+      {
+        "nombre": "Fresa",
+        "especie": "Fragaria x ananassa",
+        "descripcion": "Una planta frutal que produce deliciosas fresas rojas.",
+        "tipo": "Fruta",
+        "requerimientos": {
+          "agua": "Moderado",
+          "luz": "Pleno sol",
+          "suelo": "Fértil y bien drenado"
+        },
+        "cuidados": "Riego regular y eliminación de malas hierbas.",
+        "imagen": "fresa.jpg"
+      }
+    ]
+  }
+  
