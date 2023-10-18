@@ -6,7 +6,7 @@ export const Cards = () => {
   return (
     <div className='d-flex flex-wrap justify-content-around align-items-center'>
          {
-          plantas.map( (planta, i) => <Card key={i} planta={planta}/>)
+          plantas.map( (planta, i) => <Card key={i} planta={planta} index={i}/>)
         }
     </div>
   )
