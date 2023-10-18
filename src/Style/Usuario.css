@@ -9,6 +9,11 @@
   font-size: larger;
 }
 
+.MainRL{
+  text-align: center;
+  box-shadow: 0px 0px 15px var(--nav-color) inset;
+}
+
 .body{
   height: 100vh;
   display: flex;

@@ -29,7 +29,7 @@ export const Login = () => {
 
     return (
         <div className='body'>
-            <main>
+            <main className='MainRL'>
                 <div className="form-container">
                     <h1>Iniciar sesión</h1>
                     <p>¡Que bueno que estes devuelta!</p>

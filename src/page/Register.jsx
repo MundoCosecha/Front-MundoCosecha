@@ -48,10 +48,10 @@ export const Register = () => {
                         <input type="email" name="email" id="email" placeholder="Correo electrónico" />
                         <label htmlFor="password" className="sr-only">Password</label>
                         <input type="password" name="password" id="password" placeholder="Contraseña" />
-                        <button type="submit">Iniciar sesión</button>
+                        <button type="submit">Crear cuenta</button>
                         <p className="error escondido">Error al registrarse</p>
                     </form>
-                    <p>¿Ya estás registrado? - <Link to={'/Login'} >Crear cuenta</Link> </p>
+                    <p>¿Ya estás registrado? - <Link to={'/Login'} >Iniciar sesión</Link> </p>
                 </div>
             </main>
         </div>
