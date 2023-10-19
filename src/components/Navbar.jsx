@@ -20,9 +20,8 @@ export const Navbar = () => {
         <li>
           <Link to={'/'}><i className="ri-home-heart-fill"></i>Home</Link>
         </li>
-        <li> <Link><i className="ri-store-2-fill"></i>Shop</Link> </li>
-        <li> <Link><i className="ri-user-2-fill"></i>About</Link> </li>
-        <li> <Link><i className="ri-shopping-bag-fill"></i>Service</Link> </li>
+        <li> <Link> <i className='ri-file-text-fill'></i> Documentanción</Link> </li>
+        <li> <Link to={'/Gestion'}><i className='bx bx-task'></i>Gestion</Link> </li>
         <li> <Link to={'/catalogo'}><i className="ri-store-2-fill"></i>Catalogo</Link> </li>
       </ul>
       <div className="Users">

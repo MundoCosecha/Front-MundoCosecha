@@ -4,20 +4,34 @@ import React from 'react'
 
 export const Login = () => {
 
+    const [error, setError] = React.useState(false)
+
     const [user, setUser] = React.useState({
-        user: "",
+        email: "",
         password: ""
     })
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:4000/api/login", {
+
+        if (user.email === "" || user.password === "") {
+            setError(true)
+            return
+        }
+        setError(false)
+
+        fetch("http://localhost:4000/auth/inicioSesion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(user)
         });
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 50);
+
+
     }
 
     const handleChange = (e) => {
@@ -35,8 +49,8 @@ export const Login = () => {
                     <p>¡Que bueno que estes devuelta!</p>
                     <Link to={'/'} >Volver al Incio</Link>
                     <form className="FromRL" id="login-form" onChange={handleChange} onSubmit={handleSubmit}>
-                        <label htmlFor="user" className="sr-only">User</label>
-                        <input type="text" name="user" id="user" placeholder="Nombre de usuario" />
+                        <label htmlFor="email" className="sr-only">Email</label>
+                        <input type="text" name="email" id="user" placeholder="Correo electronico" />
                         <label htmlFor="password" className="sr-only">Password</label>
                         <input type="password" name="password" id="password" placeholder="Contraseña" />
                         <button type="submit"
@@ -44,6 +58,7 @@ export const Login = () => {
                         <p className="error escondido">Error al iniciar sesión</p>
                     </form>
                     <p>¿Todavía no tenés una cuenta? - <Link to={'/registro'}>Registrate</Link></p>
+                    {error && <p>Todos los campos son obligatorios</p>}
                 </div>
             </main>
         </div>

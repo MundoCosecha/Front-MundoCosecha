@@ -6,6 +6,7 @@ import './index.css'
 import { Login } from './page/Login.jsx'
 import { Register } from './page/Register.jsx'
 import { Catalogo } from './page/Catalogo.jsx'
+import { Gestion } from './page/gestion.jsx'
 
 
 const routes = [
@@ -24,8 +25,11 @@ const routes = [
   {
     path: '/catalogo',
     element: <Catalogo />,
-  }
-
+  },
+  {
+    path: '/Gestion',
+    element: <Gestion />,
+  },
 ]
 
 
