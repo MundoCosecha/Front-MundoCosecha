@@ -13,9 +13,8 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <Link to={"/"}>
-        <a href="#" className="logo"
-        ><span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></a></Link>
+      <Link to={"/"} className="logo">
+        <span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></Link>
       <ul className="navbar">
         <li>
           <Link to={'/'}><i className="ri-home-heart-fill"></i>Home</Link>

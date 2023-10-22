@@ -1,16 +1,13 @@
-import { Calendar } from 'react-calendar'
+
 import '../Style/Calendar.css'
 import { Navbar } from "../components/Navbar"
+import { MyCalendar } from '../components/Gestion/Prueba'
 
 export const Gestion = () => {
     return (
         <>
             <Navbar />
-            <div className="calendar">
-                <div className="divCalen">
-                    <Calendar />
-                </div>
-            </div>
+            <MyCalendar />
         </>
     )
 }

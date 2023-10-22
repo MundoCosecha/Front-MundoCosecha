@@ -1,10 +1,7 @@
-.calendar{
+.divCalen{
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.divCalen{
-    width: 550px;
-    height: 500px;
 }
