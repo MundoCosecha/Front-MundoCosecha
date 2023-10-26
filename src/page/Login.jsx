@@ -49,7 +49,7 @@ export const Login = () => {
                     <p>¡Que bueno que estes devuelta!</p>
                     <Link to={'/'} >Volver al Incio</Link>
                     <form className="FromRL" id="login-form" onChange={handleChange} onSubmit={handleSubmit}>
-                        <label htmlFor="email" className="sr-only">Email</label>
+                        <label htmlFor="email" className="sr-only" >Email</label>
                         <input type="text" name="email" id="user" placeholder="Correo electronico" />
                         <label htmlFor="password" className="sr-only">Password</label>
                         <input type="password" name="password" id="password" placeholder="Contraseña" />
