@@ -1,3 +1,4 @@
+import React from "react"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import '../Style/MundoCosecha.css'
@@ -7,6 +8,8 @@ import '../Style/SpanTitel.css'
 import '../Style/SpanSubTitel.css'
 
 export const MundoCosecha = () => {
+  const [endeble, setEndeble] = React.useState(false);
+
   return (
     <div className="bodyPag">
       <Header />
