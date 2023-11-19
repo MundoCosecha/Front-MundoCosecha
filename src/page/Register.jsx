@@ -1,14 +1,15 @@
 import '../Style/Usuario.css'
 import { Link } from 'react-router-dom'
-import React from 'react'
+import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 
 
 export const Register = () => {
 
-    const [error, setError] = React.useState(false)
+    const [error, setError] = useState(false)
 
-    const [user, setUser] = React.useState({
+    const [user, setUser] = useState({
         user_name: "",
         email: "",
         password: ""
@@ -19,9 +20,9 @@ export const Register = () => {
         if (user.email === "" || user.password === "" || user.user_name === "") {
             setError(true)
             return
+        } else {
+            setError(false)
         }
-        setError(false)
-
 
         fetch("http://localhost:4000/auth/registro", {
             method: "POST",
@@ -29,10 +30,15 @@ export const Register = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(user)
-        });
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 50);
+        }).then(res => res.json()).then((cred) => {
+            if (cred.error) {
+                alert("Error al crear la cuenta")
+                return
+            }
+            localStorage.setItem("token", JSON.stringify(cred.token)) // Guardo el token en el localStorage
+            localStorage.setItem("user", JSON.stringify(cred.user.user_name))
+            Navigate("/")
+        })
     }
 
     const handleChange = (e) => {
@@ -60,7 +66,6 @@ export const Register = () => {
                         <label htmlFor="password" className="sr-only">Password</label>
                         <input type="password" name="password" id="password" placeholder="Contraseña" />
                         <button type="submit">Crear cuenta</button>
-                        <p className="error escondido">Error al registrarse</p>
                     </form>
                     <p>¿Ya estás registrado? - <Link to={'/Login'} >Iniciar sesión</Link> </p>
                     {error && <p>Todos los campos son obligatorios</p>}

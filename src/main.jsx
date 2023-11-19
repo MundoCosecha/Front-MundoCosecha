@@ -7,6 +7,7 @@ import { Login } from './page/Login.jsx'
 import { Register } from './page/Register.jsx'
 import { Catalogo } from './page/Catalogo.jsx'
 import { Gestion } from './page/gestion.jsx'
+import { LoginProtect } from './routes/LoginProtect.jsx'
 
 
 const routes = [
@@ -27,8 +28,14 @@ const routes = [
     element: <Catalogo />,
   },
   {
-    path: '/Gestion',
-    element: <Gestion />,
+    path: '/',
+    element: <LoginProtect />,
+    children: [
+      {
+        path: '/Gestion',
+        element: <Gestion />,
+      },
+    ],
   },
 
 

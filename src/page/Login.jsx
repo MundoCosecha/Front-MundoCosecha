@@ -1,15 +1,25 @@
 import '../Style/Usuario.css'
 import { Link } from 'react-router-dom'
-import React from 'react'
+import { Navigate } from 'react-router-dom'
+import { useState } from 'react'
+
+
 
 export const Login = () => {
 
-    const [error, setError] = React.useState(false)
+    const [error, setError] = useState(false)
 
-    const [user, setUser] = React.useState({
+    const [user, setUser] = useState({
         email: "",
         password: ""
     })
+    const token = localStorage.getItem("token")
+
+    if (token) {
+        return <Navigate to="/" />
+    }
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -17,21 +27,24 @@ export const Login = () => {
         if (user.email === "" || user.password === "") {
             setError(true)
             return
+        } else {
+            setError(false)
         }
-        setError(false)
-
         fetch("http://localhost:4000/auth/inicioSesion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(user)
-        });
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 50);
-
-
+        }).then(res => res.json()).then((cred) => {
+            if (cred.error) {
+                alert("Error al iniciar sesión")
+                return
+            }
+            localStorage.setItem("token", JSON.stringify(cred.token)) // Guardo el token en el localStorage
+            localStorage.setItem("user", JSON.stringify(cred.user.user_name))
+            Navigate("/")
+        })
     }
 
     const handleChange = (e) => {
