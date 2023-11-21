@@ -23,14 +23,14 @@ const routes = [
     element: <Login />,
   },
   {
-    path: '/catalogo',
+    path: '/catalogo',  
     element: <Catalogo />,
   },
   {
     path: '/Gestion',
     element: <Gestion />,
   },
-
+  
 
 ]
 
