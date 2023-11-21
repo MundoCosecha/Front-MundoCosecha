@@ -1,4 +1,3 @@
-import React from "react"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import '../Style/MundoCosecha.css'
@@ -8,14 +7,10 @@ import '../Style/SpanTitel.css'
 import '../Style/SpanSubTitel.css'
 
 export const MundoCosecha = () => {
-  const [endeble, setEndeble] = React.useState(false);
-
   return (
     <div className="bodyPag">
       <Header />
       <main className="mainPag">
-        {/* <h1>¡Crea tu propia huerta!</h1>
-        <h3> En simples pasos </h3> */}
         <div className="h2-color">
           <h2>
             <span className="spanTitle">
