@@ -1,17 +1,21 @@
+import { useContext } from "react"
+import { AuthContext } from "../Context/AuthProvider"
+
 
 export const CerrarSesion = () => {
+
+    const { logout } = useContext(AuthContext)
+
     const handleSignout = () => {
-        localStorage.removeItem("token")
-        localStorage.removeItem("user")
-        window.location.href = "/"
+        logout()
     }
     return (
         <>
             <li>
-                {`${JSON.parse(localStorage.getItem("user")).user_name}`}
+
             </li>
             <li>
-                <button onClick={handleSignout}>
+                <button className="BtnCerrarSesion" onClick={handleSignout}>
                     <i className="ri-logout-box-r-fill"></i>
                     <span>Cerrar Sesión</span>
                 </button>

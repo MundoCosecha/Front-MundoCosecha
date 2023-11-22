@@ -1,15 +1,15 @@
 import '../Style/Navbar.css'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { CerrarSesion } from './CerrarSesion';
 import { LoginRegis } from './LoginRegis';
+import { useContext } from 'react'
+import { AuthContext } from '../Context/AuthProvider';
 
 export const Navbar = () => {
 
-  const [user, setUser] = useState(false)
 
 
-  const token = localStorage.getItem("token");
+  const { state } = useContext(AuthContext)
 
 
 
@@ -32,11 +32,11 @@ export const Navbar = () => {
             <Link to={'/'}><i className="ri-home-heart-fill"></i>Home</Link>
           </li>
           <li> <Link> <i className='ri-file-text-fill'></i> Documentanción</Link> </li>
-          {user && <li> <Link to={'/Gestion'}><i className='bx bx-task'></i>Gestion</Link> </li>}
+          {state.logged && <li> <Link to={'/Gestion'}><i className='bx bx-task'></i>Gestion</Link> </li>}
           <li> <Link to={'/catalogo'}><i className="ri-store-2-fill"></i>Catalogo</Link> </li>
         </ul>
         <div className="Users">
-          {user
+          {state.logged
             ? <CerrarSesion />
             : <LoginRegis />}
 

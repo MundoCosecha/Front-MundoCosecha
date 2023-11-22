@@ -8,6 +8,7 @@ import { Register } from './page/Register.jsx'
 import { Catalogo } from './page/Catalogo.jsx'
 import { Gestion } from './page/gestion.jsx'
 import { LoginProtect } from './routes/LoginProtect.jsx'
+import { AuthProvider } from './Context/AuthProvider.jsx'
 
 
 const routes = [
@@ -48,6 +49,8 @@ const router = createBrowserRouter(routes)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
