@@ -113,6 +113,10 @@ nav{
 .user span:hover{
     color: var(--main-color);
 }
+.BtnCerrarSesion{
+    background: transparent;
+    font-size: 18px;
+}
 
 #menu-icon{
     font-size: 35px;

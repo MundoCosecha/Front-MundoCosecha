@@ -1,11 +1,16 @@
 import '../Style/Usuario.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../Context/AuthProvider'
 
 
 
 export const Register = () => {
+    const navigate = useNavigate();
+
+    const { login } = useContext(AuthContext)
 
     const [error, setError] = useState(false)
 
@@ -15,7 +20,7 @@ export const Register = () => {
         password: ""
     })
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (user.email === "" || user.password === "" || user.user_name === "") {
             setError(true)
@@ -24,21 +29,19 @@ export const Register = () => {
             setError(false)
         }
 
-        fetch("http://localhost:4000/auth/registro", {
+        const res = await fetch("http://localhost:4000/auth/inicioSesion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(user)
-        }).then(res => res.json()).then((cred) => {
-            if (cred.error) {
-                alert("Error al crear la cuenta")
-                return
-            }
-            localStorage.setItem("token", JSON.stringify(cred.token)) // Guardo el token en el localStorage
-            localStorage.setItem("user", JSON.stringify(cred.user.user_name))
-            Navigate("/")
         })
+        const data = await res.json();
+        login(data);
+
+        localStorage.setItem("token", data.token) // Guardo el token en el localStorage
+
+        navigate("/");
     }
 
     const handleChange = (e) => {
