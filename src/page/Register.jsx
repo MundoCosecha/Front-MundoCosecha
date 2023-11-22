@@ -10,7 +10,7 @@ import { AuthContext } from '../Context/AuthProvider'
 export const Register = () => {
     const navigate = useNavigate();
 
-    const { login } = useContext(AuthContext)
+    const { register } = useContext(AuthContext)
 
     const [error, setError] = useState(false)
 
@@ -37,7 +37,7 @@ export const Register = () => {
             body: JSON.stringify(user)
         })
         const data = await res.json();
-        login(data);
+        register(data);
 
         localStorage.setItem("token", data.token) // Guardo el token en el localStorage
 
