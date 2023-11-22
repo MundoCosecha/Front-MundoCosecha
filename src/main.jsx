@@ -8,7 +8,8 @@ import { Register } from './page/Register.jsx'
 import { Catalogo } from './page/Catalogo.jsx'
 import { Gestion } from './page/gestion.jsx'
 import { LoginProtect } from './routes/LoginProtect.jsx'
-
+import { Document } from'./page/Document.jsx'
+import { Foro } from './page/Foro.jsx'
 
 const routes = [
   {
@@ -37,12 +38,15 @@ const routes = [
       },
     ],
   },
-  
-
+  {
+    path:'/Documentacion',
+    element: <Document/>
+  },
+  {
+  path:'/Foro',
+  element: <Foro/>
+  }
 ]
-
-
-
 
 const router = createBrowserRouter(routes)
 
