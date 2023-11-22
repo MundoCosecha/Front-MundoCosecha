@@ -25,13 +25,13 @@ export const Navbar = () => {
   return (
     <>
       <nav>
-        <Link to={"/"} className="logo">
+      <Link to={"/"} className="logo">
           <span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></Link>
         <ul className="navbar">
           <li>
             <Link to={'/'}><i className="ri-home-heart-fill"></i>Home</Link>
           </li>
-          <li> <Link> <i className='ri-file-text-fill'></i> Documentanción</Link> </li>
+          <li> <Link to={'/Documento'}> <i className='ri-file-text-fill'></i> Documentanción</Link> </li>
           {state.logged && <li> <Link to={'/Gestion'}><i className='bx bx-task'></i>Gestion</Link> </li>}
           <li> <Link to={'/catalogo'}><i className="ri-store-2-fill"></i>Catalogo</Link> </li>
           <li> <Link to={'/Foro'}><i className="ri-store-2-fill"></i>Foro</Link> </li>
