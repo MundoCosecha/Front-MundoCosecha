@@ -10,7 +10,6 @@ export const LoginProtect = () => {
 
     return (
         <>
-
             {state.logged ? <Outlet /> : <Navigate to="/login" />}
         </>
     );

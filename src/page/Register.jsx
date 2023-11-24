@@ -45,7 +45,7 @@ export const Register = () => {
         }
 
         // se envian los datos al servidor
-        const res = await fetch("http://localhost:4000/auth/inicioSesion", {
+        const res = await fetch("http://localhost:4000/auth/registro", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -54,7 +54,7 @@ export const Register = () => {
         })
 
         // se valida la respuesta del servidor
-        if (res === 200) {
+        if (res.status === 200 || res.status === 201) {
             // se obtiene la respuesta del servidor
             const data = await res.json();
             // se envia la respuesta al context

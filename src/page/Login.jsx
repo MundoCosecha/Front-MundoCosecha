@@ -53,7 +53,7 @@ export const Login = () => {
             body: JSON.stringify(user)
         })
         // se valida la respuesta del servidor
-        if (res === 200) {
+        if (res.status === 200 || res.status === 201) {
             // se obtiene la respuesta del servidor
             const data = await res.json();
             // se envia la respuesta al context
