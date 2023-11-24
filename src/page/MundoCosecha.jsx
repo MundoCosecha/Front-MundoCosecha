@@ -74,6 +74,9 @@ export const MundoCosecha = () => {
             </div>
           </section>
         </div>
+
+        
+
       </main>
       <Footer />
     </div>
