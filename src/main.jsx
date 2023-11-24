@@ -8,7 +8,7 @@ import { Register } from './page/Register.jsx'
 import { Catalogo } from './page/Catalogo.jsx'
 import { Gestion } from './page/gestion.jsx'
 import { LoginProtect } from './routes/LoginProtect.jsx'
-import { Document } from'./page/Document.jsx'
+import { Document } from './page/Document.jsx'
 import { Foro } from './page/Foro.jsx'
 import { AuthProvider } from './Context/AuthProvider.jsx'
 
@@ -27,7 +27,7 @@ const routes = [
     element: <Login />,
   },
   {
-    path: '/catalogo',  
+    path: '/catalogo',
     element: <Catalogo />,
   },
   {
@@ -41,12 +41,18 @@ const routes = [
     ],
   },
   {
-    path:'/Documentacion',
-    element: <Document/>
+    path: '/Documentacion',
+    element: <Document />
   },
   {
-  path:'/Foro',
-  element: <Foro/>
+    path: '/',
+    element: <LoginProtect />,
+    children: [
+      {
+        path: '/Foro',
+        element: <Foro />
+      }
+    ]
   }
 ]
 

@@ -1,20 +1,15 @@
 import { Outlet, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthProvider";
+
 
 export const LoginProtect = () => {
-    const [isLogged, setIsLogged] = useState(false);
 
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-        setIsLogged(false);
-    } else {
-        setIsLogged(true);
-    }
+    const { state } = useContext(AuthContext);
 
     return (
         <>
-            {isLogged ? <Outlet /> : <Navigate to="/login" />}
+            {state.logged ? <Outlet /> : <Navigate to="/login" />}
         </>
     );
 

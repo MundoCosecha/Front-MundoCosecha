@@ -13,6 +13,7 @@ export const Register = () => {
     const { register } = useContext(AuthContext)
 
     const [error, setError] = useState(false)
+    const [errors, setErrors] = useState(false)
 
     const [user, setUser] = useState({
         user_name: "",
@@ -24,6 +25,7 @@ export const Register = () => {
         e.preventDefault()
         if (user.email === "" || user.password === "" || user.user_name === "") {
             setError(true)
+            setErrors(false)
             return
         } else {
             setError(false)
@@ -36,12 +38,16 @@ export const Register = () => {
             },
             body: JSON.stringify(user)
         })
-        const data = await res.json();
-        register(data);
 
-        localStorage.setItem("token", data.token) // Guardo el token en el localStorage
-
-        navigate("/");
+        if (res === 200) {
+            // se obtiene la respuesta del servidor
+            const data = await res.json();
+            // se envia la respuesta al context
+            register(data);
+            navigate("/");
+        } else {
+            setErrors(true)
+        }
     }
 
     const handleChange = (e) => {
@@ -61,6 +67,7 @@ export const Register = () => {
                     <h1>Crear cuenta</h1>
                     <p>¡Unete a nosotros!</p>
                     <Link to={'/'} >Volver al Incio</Link>
+                    {errors && <p>No se puedo Resistrar</p>}
                     <form className="FromRL" id="register-form" onChange={handleChange} onSubmit={handleSubmit} >
                         <label htmlFor="user" className="sr-only">User</label>
                         <input type="text" name="user_name" id="user" placeholder="Nombre de usuario" />
