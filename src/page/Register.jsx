@@ -8,29 +8,43 @@ import { AuthContext } from '../Context/AuthProvider'
 
 
 export const Register = () => {
+
+    // se crea la funcion para navegar entre paginas
     const navigate = useNavigate();
 
+    // se obtiene el register del context
     const { register } = useContext(AuthContext)
 
+    // se crean los estados para los errores
     const [error, setError] = useState(false)
-    const [errors, setErrors] = useState(false)
 
+    // se crean los estados para los errores de Register
+    const [errorsRegister, setErrorsRegister] = useState(false)
+
+    // se crea el estado para el usuario
     const [user, setUser] = useState({
         user_name: "",
         email: "",
         password: ""
     })
 
+    // se crea la funcion para enviar los datos al servidor
     const handleSubmit = async (e) => {
+        // se previene el comportamiento por defecto
         e.preventDefault()
+        // se valida que los campos no esten vacios
         if (user.email === "" || user.password === "" || user.user_name === "") {
+            // se cambia el estado del error
             setError(true)
-            setErrors(false)
+            // se cambia el estado del error de register
+            setErrorsRegister(false)
             return
         } else {
+            // se cambia el estado del error
             setError(false)
         }
 
+        // se envian los datos al servidor
         const res = await fetch("http://localhost:4000/auth/inicioSesion", {
             method: "POST",
             headers: {
@@ -39,18 +53,23 @@ export const Register = () => {
             body: JSON.stringify(user)
         })
 
+        // se valida la respuesta del servidor
         if (res === 200) {
             // se obtiene la respuesta del servidor
             const data = await res.json();
             // se envia la respuesta al context
             register(data);
+            // se navega a la pagina de inicio
             navigate("/");
         } else {
-            setErrors(true)
+            // se cambia el estado del error de register
+            setErrorsRegister(true)
         }
     }
 
+    // se crea la funcion para obtener los datos del formulario
     const handleChange = (e) => {
+        // se cambia el estado del usuario
         setUser({
             ...user,
             [e.target.name]: e.target.value
@@ -67,7 +86,7 @@ export const Register = () => {
                     <h1>Crear cuenta</h1>
                     <p>¡Unete a nosotros!</p>
                     <Link to={'/'} >Volver al Incio</Link>
-                    {errors && <p>No se puedo Resistrar</p>}
+                    {errorsRegister && <p>No se puedo Resistrar</p>}
                     <form className="FromRL" id="register-form" onChange={handleChange} onSubmit={handleSubmit} >
                         <label htmlFor="user" className="sr-only">User</label>
                         <input type="text" name="user_name" id="user" placeholder="Nombre de usuario" />

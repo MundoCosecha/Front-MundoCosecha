@@ -1,6 +1,8 @@
 import { types } from "../Types/types";
 
-export const authReducer = (state = {}, action) => {
+// se crea el reducer para el manejo de la autenticacion
+export const authReducer = (state, action) => {
+    // se evalua el tipo de accion que se esta ejecutando
     switch (action.type) {
         case types.LOGIN:
             localStorage.setItem('token', action.payload.token);
