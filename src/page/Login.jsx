@@ -12,6 +12,7 @@ export const Login = () => {
 
     const { login } = useContext(AuthContext)
 
+    const [errors, setErrors] = useState(false)
     const [error, setError] = useState(false)
 
     const [user, setUser] = useState({
@@ -28,25 +29,29 @@ export const Login = () => {
         e.preventDefault()
 
         if (user.email === "" || user.password === "") {
-            setError(true)
+            setErrors(true)
+            setError(false)
             return
         } else {
-            setError(false)
+            setErrors(false)
         }
         const res = await fetch("http://localhost:4000/auth/inicioSesion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify({ user })
         })
-        const data = await res.json();
-        login(data);
 
-        localStorage.setItem("token", data.token) // Guardo el token en el localStorage
-
-        navigate("/");
-
+        if (res === 200) {
+            // se obtiene la respuesta del servidor
+            const data = await res.json();
+            // se envia la respuesta al context
+            login(data);
+            navigate("/");
+        } else {
+            setError(true)
+        }
     }
 
     const handleChange = (e) => {
@@ -63,6 +68,7 @@ export const Login = () => {
                     <h1>Iniciar sesión</h1>
                     <p>¡Que bueno que estes devuelta!</p>
                     <Link to={'/'} >Volver al Incio</Link>
+                    {error && <p>Usuario o contraseña incorrectos</p>}
                     <form className="FromRL" id="login-form" onChange={handleChange} onSubmit={handleSubmit}>
                         <label htmlFor="email" className="sr-only" >Email</label>
                         <input type="text" name="email" id="user" placeholder="Correo electronico" />
@@ -73,7 +79,7 @@ export const Login = () => {
                         <p className="error escondido">Error al iniciar sesión</p>
                     </form>
                     <p>¿Todavía no tenés una cuenta? - <Link to={'/registro'}>Registrate</Link></p>
-                    {error && <p>Todos los campos son obligatorios</p>}
+                    {errors && <p>Todos los campos son obligatorios</p>}
                 </div>
             </main>
         </div>

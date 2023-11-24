@@ -117,6 +117,9 @@ nav{
     background: transparent;
     font-size: 18px;
 }
+.BtnCerrarSesion span:hover{
+    color: var(--main-color);
+}
 
 #menu-icon{
     font-size: 35px;

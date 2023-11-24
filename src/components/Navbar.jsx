@@ -25,7 +25,7 @@ export const Navbar = () => {
   return (
     <>
       <nav>
-      <Link to={"/"} className="logo">
+        <Link to={"/"} className="logo">
           <span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></Link>
         <ul className="navbar">
           <li>
@@ -34,7 +34,7 @@ export const Navbar = () => {
           <li> <Link to={'/Documento'}> <i className='ri-file-text-fill'></i> Documentanción</Link> </li>
           {state.logged && <li> <Link to={'/Gestion'}><i className='bx bx-task'></i>Gestion</Link> </li>}
           <li> <Link to={'/catalogo'}><i className="ri-store-2-fill"></i>Catalogo</Link> </li>
-         {state.logged && <li> <Link to={'/Foro'}><i className="ri-store-2-fill"></i>Foro</Link> </li> }
+          {state.logged && < li > <Link to={'/Foro'}><i className="ri-store-2-fill"></i>Foro</Link> </li>}
 
         </ul>
         <div className="Users">
@@ -44,7 +44,7 @@ export const Navbar = () => {
 
           <div className="bx bx-menu" id="menu-icon" onClick={menu}></div>
         </div>
-      </nav>
+      </nav >
     </>
   )
 }
