@@ -30,14 +30,11 @@ export const Login = () => {
 
     // se crea la funcion para enviar los datos al servidor
     const handleSubmit = async (e) => {
-        // se previene el comportamiento por defecto
         e.preventDefault()
 
         // se valida que los campos no esten vacios
         if (user.email === "" || user.password === "") {
-            // se cambia el estado del error
             setErrors(true)
-            // se cambia el estado del error de login
             setErrorLogin(false)
             return
         } else {
@@ -53,7 +50,7 @@ export const Login = () => {
             body: JSON.stringify(user)
         })
         // se valida la respuesta del servidor
-        if (res === 200) {
+        if (res.status === 200 || res.status === 201) {
             // se obtiene la respuesta del servidor
             const data = await res.json();
             // se envia la respuesta al context
