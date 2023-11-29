@@ -41,7 +41,7 @@ const routes = [
     ],
   },
   {
-    path: '/Documentacion',
+    path: '/Document',
     element: <Document />
   },
   {
