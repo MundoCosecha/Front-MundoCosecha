@@ -31,10 +31,27 @@ export const Navbar = () => {
           <li>
             <Link to={'/'}><i className="ri-home-heart-fill"></i>Home</Link>
           </li>
-          <li> <Link to={'/Document'}> <i className='ri-file-text-fill'></i> Documentanción</Link> </li>
+          <li> 
+
+          <div class="input-group mb-3">
+  <button class="btn btn-outline-light " type="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+          <i class='bx bx-food-menu 1rem'></i> Documentacion</button>
+  <ul class="dropdown-menu bg-dark">
+    <li><Link to={"/src/page/Document.jsx"} class="dropdown-item" href="#">Beneficios</Link></li>
+    <li><Link to={"/src/page/TipoHuerta.jsx"} class="dropdown-item" href="#">Tipos de Huertas</Link></li>
+    <li><Link to={"/src/page/CrearHuerta.jsx"} class="dropdown-item" href="#">Crea tu Huerta</Link></li>
+    <li><Link to={"/src/page/Plagas.jsx"} class="dropdown-item" href="#">Plagas y Enfermedades</Link></li>
+   
+  </ul>
+
+</div>
+
+          </li>
+         
           {state.logged && <li> <Link to={'/Gestion'}><i className='bx bx-task'></i>Gestion</Link> </li>}
           <li> <Link to={'/catalogo'}><i className="ri-store-2-fill"></i>Catalogo</Link> </li>
           {state.logged && < li > <Link to={'/Foro'}><i className="ri-store-2-fill"></i>Foro</Link> </li>}
+          
 
         </ul>
         <div className="Users">
