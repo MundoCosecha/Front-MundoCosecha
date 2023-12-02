@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -13,6 +13,10 @@ import { Foro } from "./page/Foro.jsx";
 import { AuthProvider } from "./Context/AuthProvider.jsx";
 import { TasksList } from "./page/TasksList.jsx";
 import { Calendar } from "./page/Calendar.jsx";
+import { TipoHuerta } from "./page/TipoHuerta.jsx";
+import { CrearHuertaDoc } from "./page/CrearHuertaDoc.jsx";
+import { Plagas } from "./page/Plagas.jsx";
+import { Compost } from "./page/Compost.jsx";
 
 const routes = [
   {
@@ -46,6 +50,22 @@ const routes = [
     element: <Document />,
   },
   {
+    path: "/TipoHuerta",
+    element: <TipoHuerta />,
+  },
+  {
+    path: "/CrearHuerta",
+    element: <CrearHuertaDoc />,
+  },
+  {
+    path: "/Plagas",
+    element: <Plagas />,
+  },
+  {
+    path: "/Compost",
+    element: <Compost />,
+  },
+  {
     path: "/",
     element: <LoginProtect />,
     children: [
@@ -65,6 +85,7 @@ const routes = [
       },
     ],
   },
+
   {
     path: "/",
     element: <LoginProtect />,

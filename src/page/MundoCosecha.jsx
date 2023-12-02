@@ -181,7 +181,7 @@ export const MundoCosecha = () => {
                   className=" img-carrusel "
                   alt=""
                 />
-                <div class="carousel-caption d-none d-md-block h2-carrusel">
+                <div className="carousel-caption d-none d-md-block h2-carrusel">
                   <h2 className="text-white">Huerta ecologica</h2>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export const MundoCosecha = () => {
                   className="img-carrusel "
                   alt="..."
                 />
-                <div class="carousel-caption d-none d-md-block h2-carrusel">
+                <div className="carousel-caption d-none d-md-block h2-carrusel">
                   <h2 className="text-white">Huerta vertical</h2>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export const MundoCosecha = () => {
                   className="img-carrusel "
                   alt="..."
                 />
-                <div class="carousel-caption d-none d-md-block  h2-carrusel">
+                <div className="carousel-caption d-none d-md-block  h2-carrusel">
                   <h2 className="text-white ">Huertas en bancales</h2>
                 </div>
               </div>
