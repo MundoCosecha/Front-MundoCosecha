@@ -12,7 +12,6 @@ export const Navbar = () => {
   const { state } = useContext(AuthContext)
 
 
-
   const menu = () => {
     let menu = document.querySelector("#menu-icon");
     let navbar = document.querySelector(".navbar");
