@@ -1,67 +1,109 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import { Login } from './page/Login.jsx'
-import { Register } from './page/Register.jsx'
-import { Catalogo } from './page/Catalogo.jsx'
-import { Gestion } from './page/gestion.jsx'
-import { LoginProtect } from './routes/LoginProtect.jsx'
-import { Document } from './page/Document.jsx'
-import { Foro } from './page/Foro.jsx'
-import { AuthProvider } from './Context/AuthProvider.jsx'
-
+import React, { Component } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import { Login } from "./page/Login.jsx";
+import { Register } from "./page/Register.jsx";
+import { Catalogo } from "./page/Catalogo.jsx";
+import { Gestion } from "./page/Gestion.jsx";
+import { LoginProtect } from "./routes/LoginProtect.jsx";
+import { Document } from "./page/Document.jsx";
+import { Foro } from "./page/Foro.jsx";
+import { AuthProvider } from "./Context/AuthProvider.jsx";
+import { TasksList } from "./page/TasksList.jsx";
+import { Calendar } from "./page/Calendar.jsx";
+import { TipoHuerta } from "./page/TipoHuerta.jsx";
+import { CrearHuertaDoc } from "./page/CrearHuertaDoc.jsx";
+import { Plagas } from "./page/Plagas.jsx";
+import { Compost } from "./page/Compost.jsx";
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     element: <App />,
   },
   {
-    path: '/registro',
+    path: "/registro",
     element: <Register />,
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Login />,
   },
   {
-    path: '/catalogo',
+    path: "/catalogo",
     element: <Catalogo />,
   },
   {
-    path: '/',
+    path: "/",
     element: <LoginProtect />,
     children: [
       {
-        path: '/Gestion',
+        path: "/Gestion",
         element: <Gestion />,
       },
     ],
   },
   {
-    path: '/Documentacion',
-    element: <Document />
+    path: "/Documentacion",
+    element: <Document />,
   },
   {
-    path: '/',
+    path: "/TipoHuerta",
+    element: <TipoHuerta />,
+  },
+  {
+    path: "/CrearHuerta",
+    element: <CrearHuertaDoc />,
+  },
+  {
+    path: "/Plagas",
+    element: <Plagas />,
+  },
+  {
+    path: "/Compost",
+    element: <Compost />,
+  },
+  {
+    path: "/",
     element: <LoginProtect />,
     children: [
       {
-        path: '/Foro',
-        element: <Foro />
-      }
-    ]
-  }
-]
+        path: "/Foro",
+        element: <Foro />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <LoginProtect />,
+    children: [
+      {
+        path: "/TasksList",
+        element: <TasksList />,
+      },
+    ],
+  },
 
-const router = createBrowserRouter(routes)
+  {
+    path: "/",
+    element: <LoginProtect />,
+    children: [
+      {
+        path: "/Calendar",
+        element: <Calendar />,
+      },
+    ],
+  },
+];
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter(routes);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
