@@ -8,14 +8,27 @@
 :root{
   --bg-color: #66350d;
   --text-color: #118602;  
-  --body-color: #acf09b;
+  --body-color: #35e40918;
   --main-color: #1ac03b;
   --nav-color: #000000;
   --header-color: #0f758f;
   --navText-color: #ffffff;
+  --divTex-color: #000000;
+
+--olive-drab-50: #f6f9ec;
+--olive-drab-100: #e9f1d6;
+--olive-drab-200: #d5e4b2;
+--olive-drab-300: #b8d185;
+--olive-drab-400: #9dbd5e;
+--olive-drab-500: #7fa240;
+--olive-drab-600: #658431;
+--olive-drab-700: #4c6328;
+--olive-drab-800: #3f5024;
+--olive-drab-900: #364423;
+--olive-drab-950: #1b250e;
 }
 body{
-  background: var(--body-color);
+  background: var(--olive-drab-50);
   min-height: 100vh;
   color: var(--text-color);
 }
@@ -30,5 +43,6 @@ header{
 
 
 footer{
-  box-shadow: 0px 0px 15px var(--nav-color) inset;
+  height: 100px;
+  text-align: center;
 }

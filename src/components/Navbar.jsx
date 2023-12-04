@@ -1,36 +1,95 @@
-import '../Style/Navbar.css'
-import { Link } from 'react-router-dom';
+import "../Style/Navbar.css";
+import { Link } from "react-router-dom";
+import { CerrarSesion } from "./CerrarSesion";
+import { LoginRegis } from "./LoginRegis";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthProvider";
 
 export const Navbar = () => {
+  const { state } = useContext(AuthContext);
+
   const menu = () => {
     let menu = document.querySelector("#menu-icon");
     let navbar = document.querySelector(".navbar");
 
-    menu.classList.toggle("bx-x")
-    navbar.classList.toggle("open")
-
-  }
+    menu.classList.toggle("bx-x");
+    navbar.classList.toggle("open");
+  };
 
   return (
-    <nav>
-      <a href="#" className="logo"
-      ><span>Mund<i className="ri-earth-line mundo"></i>Cosecha</span></a>
-      <ul className="navbar">
-        <li>
-          <a href="#" className="active"
-          ><i className="ri-home-heart-fill"></i>Home</a>
-        </li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">contact</a></li>
-        <li><a href="#">service</a></li>
-        <li><a href="#">blog</a></li>
-      </ul>
-      <div className="Users">
-        <Link to={'/Login'} className="user" ><i className="ri-user-2-fill"></i><span>Sign In</span></Link>
-        <Link to={'/Registro'} className="user" >
-          <i className="ri-user-add-fill"></i><span>Register</span></Link>
-        <div className="bx bx-menu" id="menu-icon" onClick={menu}></div>
-      </div>
-    </nav>
-  )
-}
+    <>
+      <nav>
+        <Link to={"/"} className="logo">
+          <span>
+            Mund<i className="ri-earth-line mundo"></i>Cosecha
+          </span>
+        </Link>
+        <ul className="navbar">
+          <li>
+            <Link to={"/"}>
+              <i className="ri-home-heart-fill"></i>Home
+            </Link>
+          </li>
+          <li>
+            <div class="input-group">
+              <button
+                class="btn btn-outline-light dropdown-toggle "
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Documentacion
+              </button>
+              <ul class="dropdown-menu bg-dark">
+                <li>
+                  <Link to={"/Documentacion"} class="dropdown-item" href="#">
+                    Beneficios
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/TipoHuerta"} class="dropdown-item" href="#">
+                    Tipos de Huertas
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/CrearHuerta"} class="dropdown-item" href="#">
+                    Crea tu Huerta
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/Plagas"} class="dropdown-item" href="#">
+                    Plagas y Enfermedades
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/Compost"} class="dropdown-item" href="#">
+                    Compost
+                  </Link>
+                </li>
+              </ul>
+            </div>{" "}
+          </li>
+          {state.logged && (
+            <li>
+              {" "}
+              <Link to={"/Gestion"}>
+                <i className="bx bx-task"></i>Gestion
+              </Link>{" "}
+            </li>
+          )}
+          <li>
+            {" "}
+            <Link to={"/catalogo"}>
+              <i className="ri-store-2-fill"></i>Catalogo
+            </Link>{" "}
+          </li>
+        </ul>
+        <div className="Users">
+          {state.logged ? <CerrarSesion /> : <LoginRegis />}
+
+          <div className="bx bx-menu" id="menu-icon" onClick={menu}></div>
+        </div>
+      </nav>
+    </>
+  );
+};

@@ -1,0 +1,28 @@
+.spanSubTitle{
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 3px solid;
+    width: 28ch;
+    opacity: 0;
+    animation: typing 2s steps(28), blink .5s step-end infinite, Ocultar 1s step-end infinite;
+    -webkit-animation: typing 2s steps(28), blink .5s step-end infinite, Ocultar 1s step-end infinite;
+    animation-delay: 1s ,OcultarBlink 3s step-end infinite;
+    overflow: hidden;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+@keyframes OcultarBlink {
+    0% { border-color: transparent; }
+}
+
+@keyframes Ocultar {
+    0% { opacity: 1; }
+}

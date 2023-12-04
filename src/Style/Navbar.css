@@ -14,7 +14,7 @@
   }
 
 nav{
-    position: fixed;
+    position: sticky;
     /* margin-top: 10px; */
     width: 100%;
     /* border-radius: 15%; */
@@ -111,6 +111,13 @@ nav{
 }
 
 .user span:hover{
+    color: var(--main-color);
+}
+.BtnCerrarSesion{
+    background: transparent;
+    font-size: 18px;
+}
+.BtnCerrarSesion span:hover{
     color: var(--main-color);
 }
 
