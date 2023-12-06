@@ -396,8 +396,10 @@
     }
   
    
-  }.u-section-4 .u-sheet-1 {
+  } .u-sheet-1 {
     color:green;
+    
+   
   }
   
   .u-section-4 .u-list-1 {
@@ -533,6 +535,9 @@
     }
   } .u-section-5 {
     background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .u-section-5 .u-sheet-1 {

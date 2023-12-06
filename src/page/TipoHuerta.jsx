@@ -15,7 +15,7 @@ export const TipoHuerta = () => {
     id="carousel_642d"
   >
     <div className="u-clearfix u-sheet u-sheet-1">
-      <h1 className="u-custom-font u-font-georgia u-text u-text-custom-color-1 u-text-default-lg u-text-default-md u-text-default-xl u-title u-text-1">
+      <h1 className="u-custom-font u-font-georgia u-text u-text-custom-color-1 u-text-default-lg u-text-default-md u-text-default-xl u-title u-text-1 ">
        4 tipos de huertos caseros
       </h1>
       <h5 className="u-custom-font u-font-georgia u-text u-text-custom-color-1 u-text-2 subtitulo">
@@ -24,7 +24,7 @@ export const TipoHuerta = () => {
       </h5>
     </div>
   </section>
-  <section className="u-clearfix u-section-2" id="carousel_1b0c">
+  <section className="u-clearfix u-section-2 text-dark" id="carousel_1b0c">
     <div className="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
       <div className="u-layout">
         <div className="u-layout-col">
@@ -35,18 +35,18 @@ export const TipoHuerta = () => {
                   <img
                     className="u-image u-image-default u-image-1"
                     src="" alt="" />
-                  <p>huerta en el piso</p>
+                  <p className=" text-dark">huerta en el piso</p>
                 </div>
               </div>
               <div className="u-container-style u-layout-cell u-size-30 u-white u-layout-cell-2">
                 <div className="u-container-layout u-container-layout-2">
-                  <h2 className="u-align-center u-text u-text-2">
-                 Tipo de huertos según el recip​iente de cultivo
+                  <h2 className="u-align-center u-text u-text-2  text-dark">
+                 Tipo de huertos según el recipiente de cultivo
                   </h2>
-                  <h6 className="u-align-center u-text u-text-3">
+                  <h6 className="u-align-center u-text u-text-3  text-dark">
                     Huertos en el suelo:
                   </h6>
-                  <p className="u-align-justify u-custom-font u-font-georgia u-text u-text-4">
+                  <p className="u-align-justify u-custom-font u-font-georgia u-text u-text-4  text-dark">
                   
                     si tienes jardín o un pequeño espacio de tierra en la
                     entrada o en el patio trasero de tu casa esta es una buena
@@ -73,11 +73,11 @@ export const TipoHuerta = () => {
             src=""
           >
             <div className="u-container-layout u-container-layout-4">
-              <h2 className="u-custom-font u-font-georgia u-text u-text-5">
+              <h2 className="u-custom-font u-font-georgia u-text u-text-5  text-dark">
                 {" "}
                 Huerto en macetas:
               </h2>
-              <p className="u-align-center u-custom-font u-font-georgia u-text u-text-6">
+              <p className="u-align-center u-custom-font u-font-georgia u-text u-text-6  text-dark">
                 {" "}
                 Un «macetohuerto» en la terraza o en el balcón de tu casa es una
                 solución perfecta si no tienes demasiado espacio.
@@ -120,10 +120,10 @@ export const TipoHuerta = () => {
         <div className="u-repeater u-repeater-1">
           <div className="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle">
             <div className="u-container-layout u-similar-container u-container-layout-1">
-              <p className="u-custom-font u-font-georgia u-text u-text-default u-text-1">
+              <p className="u-custom-font u-font-georgia u-text u-text-default u-text-1  text-dark">
                 Huerto en mesas de cultivo:
               </p>
-              <p className="u-custom-font u-font-georgia u-text u-text-default u-text-2">
+              <p className="u-custom-font u-font-georgia u-text u-text-default u-text-2  text-dark">
                 {" "}
                 tanto en una terraza, como en un jardín, una azotea o un patio,
                 las mesas de cultivo pueden venirte muy bien si lo que quieres
@@ -162,10 +162,10 @@ export const TipoHuerta = () => {
           <div className="u-layout-row">
             <div className="u-align-left u-container-style u-layout-cell u-size-30 u-white u-layout-cell-1">
               <div className="u-container-layout u-container-layout-1">
-                <h6 className="u-align-center u-text u-text-black u-text-1">
+                <h6 className="u-align-center u-text u-text-black u-text-1  text-dark">
                   Huertos verticales:{" "}
                 </h6>
-                <p className="u-custom-font u-font-georgia u-text u-text-2">
+                <p className="u-custom-font u-font-georgia u-text u-text-2  text-dark">
                  las huertas verticales ofrecen una solución práctica y
                   estéticamente agradable para aquellos con poco espacio pero
                   con interés en el cultivo de alimentos frescos o plantas
@@ -196,11 +196,11 @@ export const TipoHuerta = () => {
   </section>
   <section className="u-align-center u-clearfix u-section-7" id="carousel_090c">
     <div className="u-clearfix u-sheet u-sheet-1">
-      <h2 className="u-custom-font u-font-georgia u-text u-text-1">
+      <h2 className="u-custom-font u-font-georgia u-text u-text-1  text-dark">
         {" "}
         Tipos de huertos según el sustrato:
       </h2>
-      <p className="u-custom-font u-font-georgia u-text u-text-2">
+      <p className="u-custom-font u-font-georgia u-text u-text-2  text-dark">
         {" "}
         El sustrato es el medio en el que se desarrollarán las raíces de tus
         plantas, es decir, de donde «comen y beben», por lo que es uno de los
@@ -217,12 +217,12 @@ export const TipoHuerta = () => {
                 data-animation-duration={2000}
               >
                 <div className="u-container-layout">
-                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-3">
+                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-3  text-dark">
                     01
                   </h5>
                 </div>
-              </div>
-              <p className="u-custom-font u-font-georgia u-text u-text-4">
+              </div> 
+              <p className="u-custom-font u-font-georgia u-text u-text-4  text-dark">
                 {" "}
                 Utilizando como sustrato la tierra de tu jardín.Tendrás
                 que asegurarte de que es lo suficientemente buena y, si es una
@@ -239,12 +239,12 @@ export const TipoHuerta = () => {
                 data-animation-duration={2000}
               >
                 <div className="u-container-layout">
-                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-5">
+                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-5  text-dark">
                     02
                   </h5>
                 </div>
               </div>
-              <p className="u-custom-font u-font-georgia u-text u-text-6">
+              <p className="u-custom-font u-font-georgia u-text u-text-6  text-dark">
                 {" "}
                 Añadiendo un sustrato comercial a tus bancales, mesas de cultivo
                 o macetas.Cómpralo en una tienda de jardinería u otra
@@ -260,12 +260,12 @@ export const TipoHuerta = () => {
                 data-animation-duration={2000}
               >
                 <div className="u-container-layout">
-                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-7">
+                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-7  text-dark">
                     03
                   </h5>
                 </div>
               </div>
-              <p className="u-custom-font u-font-georgia u-text u-text-8">
+              <p className="u-custom-font u-font-georgia u-text u-text-8  text-dark">
                 {" "}
                 Utilizando un sustrato acuapónico.La acuaponía es una
                 técnica súper novedosa que utiliza PECES para fertilizar una
@@ -279,7 +279,7 @@ export const TipoHuerta = () => {
   </section>
   <section className="u-align-center u-clearfix u-section-8" id="sec-df33">
     <div className="u-clearfix u-sheet u-sheet-1">
-      <h2 className="u-custom-font u-font-georgia u-text u-text-default u-text-1">
+      <h2 className="u-custom-font u-font-georgia u-text u-text-default u-text-1  text-dark">
         Tipos de huertos según las técnicas de cultivo
       </h2>
       <div className="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
@@ -287,7 +287,7 @@ export const TipoHuerta = () => {
           <div className="u-layout-row">
             <div className="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
               <div className="u-container-layout u-container-layout-1">
-                <p className="u-custom-font u-font-georgia u-text u-text-2">
+                <p className="u-custom-font u-font-georgia u-text u-text-2  text-dark">
                   {" "}
                   1.Huertos cultivados según la «agricultura tradicional»: No
                   hay reparos en el uso de fertilizantes químicos o
@@ -300,7 +300,7 @@ export const TipoHuerta = () => {
             </div>
             <div className="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
               <div className="u-container-layout u-container-layout-2">
-                <p className="u-custom-font u-font-georgia u-text u-text-3">
+                <p className="u-custom-font u-font-georgia u-text u-text-3  text-dark">
                   {" "}
                   2.Huertos que siguen técnicas agroecológicas: Los más comunes
                   y conocidos son los huertos ecológicos, pero también puedes
@@ -317,7 +317,7 @@ export const TipoHuerta = () => {
   </section>
   <section className="u-align-center u-clearfix u-section-9" id="carousel_47d0">
     <div className="u-clearfix u-sheet u-sheet-1">
-      <h2 className="u-align-right u-custom-font u-font-georgia u-text u-text-1">
+      <h2 className="u-align-right u-custom-font u-font-georgia u-text u-text-1  text-dark">
         Tipo de huertos según el sistema de riego:
       </h2>
       <div className="u-border-2 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1" />
@@ -331,12 +331,12 @@ export const TipoHuerta = () => {
                 data-animation-duration={2000}
               >
                 <div className="u-container-layout">
-                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-2">
+                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-2  text-dark">
                     01
                   </h5>
                 </div>
               </div>
-              <p className="u-custom-font u-font-georgia u-text u-text-3">
+              <p className="u-custom-font u-font-georgia u-text u-text-3  text-dark">
                 {" "}
                 Riego manual: Regar manualmente con una regadera o con una
                 manguera (aunque esto no es muy recomendable si tu huerto es
@@ -353,12 +353,12 @@ export const TipoHuerta = () => {
                 data-animation-duration={2000}
               >
                 <div className="u-container-layout">
-                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-4">
+                  <h5 className="u-custom-font u-font-ubuntu u-text u-text-custom-color-2 u-text-default u-text-4  text-dark">
                     02
                   </h5>
                 </div>
               </div>
-              <p className="u-custom-font u-font-georgia u-text u-text-5">
+              <p className="u-custom-font u-font-georgia u-text u-text-5  text-dark">
                 {" "}
                 Riego automático: riego por microaspersión, riegos por goteo y
                 riego por cinta exudante son los más eficientes (y por lo tanto
