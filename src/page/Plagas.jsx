@@ -33,22 +33,22 @@ export const Plagas = () => {
         <h3>Plagas y enfermedades típicas del huerto</h3>
          
         <p>Tus plantas hablan!!</p>
-        <img src="./img/Detección de problemas de plantas y árboles.jpg" alt=""> </img>
+        <img src="./img/Detección de problemas de plantas y árboles.jpg" alt="" />
 
         <p>
             PLAGAS:
 
             Pulgones: Son insectos pequeños, de color verde, amarillo o negro, que se alimentan de la savia de las plantas. Pueden causar defoliación, malformaciones y retraso en el crecimiento.
             Para su control se pueden utilizar insecticidas naturales, como el jabón potásico o el aceite de neem, o bien, insectos depredadores, como las mariquitas.
-            <img src="./img/10 Maneras Naturales De Combatir El Pulgón.jpg" alt=""> </img>
+            <img src="./img/10 Maneras Naturales De Combatir El Pulgón.jpg" alt="" /> 
             
             Mosca blanca: Son insectos pequeños, de color blanco, que se alimentan de la savia de las plantas. Pueden causar defoliación, malformaciones y retraso en el crecimiento.
             Para su control se pueden utilizar insecticidas naturales, como el jabón potásico o el aceite de neem, o bien, insectos depredadores, como las crisopas.
-            <img src="./img/Mosca Blanca en plantas.jpg" alt=""> </img>
+            <img src="./img/Mosca Blanca en plantas.jpg" alt=""/> 
 
             Hormigas: Son insectos sociales que pueden causar daños a las plantas por varias razones.
             Pueden transportar plagas, como los pulgones, pueden dañar las raíces de las plantas al excavar galerías, o pueden atacar los frutos y las semillas. Para su control se pueden utilizar trampas, repelentes o insecticidas.
-            <img src="./img/HORMIGA» Características, Organización De Las Hormiga, Hormigueros Y Tipos De Hormiga - Cumbre Pueblos.jpg" alt="">    </img>
+            <img src="./img/HORMIGA» Características, Organización De Las Hormiga, Hormigueros Y Tipos De Hormiga - Cumbre Pueblos.jpg" alt=""/>    
 
             ENFERMEDADES:
 
