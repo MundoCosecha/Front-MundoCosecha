@@ -1,25 +1,91 @@
-import React, { useState } from "react";
-import Form from "../components/huertaListado/Form";
-import Tasks from "../components/huertaListado/Tasks";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const TaskGestion = () => {
   const [tasks, setTasks] = useState([]);
+  const [error, setError] = useState(false)
+  const [tasksData, setTasksData] = useState("");
+  const [tasksDes, setTasksDes] = useState("");
+  const { id } = useParams();
+  const getTasks = async () => {
+    const res = await fetch("http://localhost:4000/api/tareas/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    setTasks(data);
+    console.log(data);
+  }
 
-  const handleAddTasks = (task) => {
-    setTasks([...tasks, { id: Date.now(), title: task, done: false }]);
-  };
+  useEffect(() => {
+    getTasks();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (tasksData === "") {
+      setError(true)
+      return;
+    }
+    await fetch("http://localhost:4000/api/tareas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ nombre: tasksData, descripcion: tasksDes, huertaId: id }),
+    });
+    setTasksData("");
+    getTasks();
+  }
+
+  const handleChange = (e) => {
+    setTasksData(e.target.value);
+  }
+
+  const handleChangeDes = (e) => {
+    setTasksDes(e.target.value);
+  }
 
   return (
-    <div className="d-flex flex-column home-container">
-      <main className="d-flex flex-column flex-sm-row flex-lg-row justify-content-center align-items-center main-container">
-        <section className="taskForm shadow col-11 col-sm-6 col-lg-6 d-flex justify-content-center align-items-center">
-          <Form handleAddTasks={handleAddTasks} />
-        </section>
-        <section className="taskList mt-3  col-11 col-sm-6 col-lg-6">
-          <Tasks tasks={tasks} />
-        </section>
-      </main>
-    </div>
+    <>
+      <div className="body-gestion ">
+        <form action="" onSubmit={handleSubmit}>
+          <h1>Crear Tarea</h1>
+          {error && <p className="error">No se puede enviar un campo vacio</p>}
+          <input
+            type="text"
+            placeholder="Nombre de la Tarea"
+            value={tasksData}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Descripcion de la tarea"
+            value={tasksDes}
+            onChange={handleChangeDes}
+          />
+          <button type="submit">Crear Tarea</button>
+        </form>
+        <div className="div-form">
+          <h1>Lista de Huertas</h1>
+          <ul>
+            {tasks.length > 0 ? (
+              tasks.map((task, id) => (
+                <li key={id}>
+                  {task.nombre}
+                  - {task.descripcion}
+                </li>
+              ))
+            ) : (
+              <li>No hay Tareas</li>
+            )}
+          </ul>
+        </div>
+      </div>
+    </>
   );
 };
 

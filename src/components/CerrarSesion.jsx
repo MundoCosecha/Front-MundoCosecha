@@ -11,6 +11,7 @@ export const CerrarSesion = () => {
 
     const handleSignout = () => {
         logout()
+        localStorage.removeItem("token")
         navigate("/")
 
     }

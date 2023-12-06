@@ -31,38 +31,38 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
-            <div class="input-group">
+            <div className="input-group">
               <button
-                class="btn btn-outline-light dropdown-toggle "
+                className="btn btn-outline-light dropdown-toggle "
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Documentacion
               </button>
-              <ul class="dropdown-menu bg-dark">
+              <ul className="dropdown-menu bg-dark">
                 <li>
-                  <Link to={"/Documentacion"} class="dropdown-item" href="#">
+                  <Link to={"/Documentacion"} className="dropdown-item" href="#">
                     Beneficios
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/TipoHuerta"} class="dropdown-item" href="#">
+                  <Link to={"/TipoHuerta"} className="dropdown-item" href="#">
                     Tipos de Huertas
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/CrearHuerta"} class="dropdown-item" href="#">
+                  <Link to={"/CrearHuerta"} className="dropdown-item" href="#">
                     Crea tu Huerta
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/Plagas"} class="dropdown-item" href="#">
+                  <Link to={"/Plagas"} className="dropdown-item" href="#">
                     Plagas y Enfermedades
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/Compost"} class="dropdown-item" href="#">
+                  <Link to={"/Compost"} className="dropdown-item" href="#">
                     Compost
                   </Link>
                 </li>

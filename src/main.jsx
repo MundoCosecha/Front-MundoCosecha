@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
+import React from "react";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
@@ -17,6 +17,7 @@ import { TipoHuerta } from "./page/TipoHuerta.jsx";
 import { CrearHuertaDoc } from "./page/CrearHuertaDoc.jsx";
 import { Plagas } from "./page/Plagas.jsx";
 import { Compost } from "./page/Compost.jsx";
+
 
 const routes = [
   {
@@ -80,7 +81,7 @@ const routes = [
     element: <LoginProtect />,
     children: [
       {
-        path: "/TasksList",
+        path: "/TasksList/:id",
         element: <TasksList />,
       },
     ],
