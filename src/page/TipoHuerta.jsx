@@ -182,11 +182,7 @@ export const TipoHuerta = () => {
             </div>
             <div
               className="u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1"
-              data-image-width={736}
-              data-image-height={792}
-              data-animation-name="fadeIn"
-              data-animation-duration={2000}
-              data-animation-direction=""
+             
             >
               <div className="u-container-layout u-container-layout-2" />
             </div>
@@ -208,7 +204,7 @@ export const TipoHuerta = () => {
         {" "}
         El sustrato es el medio en el que se desarrollarán las raíces de tus
         plantas, es decir, de donde «comen y beben», por lo que es uno de los
-        aspectos más importantes.&nbsp;Puedes cultivar tu huerto:
+        aspectos más importantes.Puedes cultivar tu huerto:
       </p>
       <div className="u-border-2 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1" />
       <div className="u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
@@ -228,7 +224,7 @@ export const TipoHuerta = () => {
               </div>
               <p className="u-custom-font u-font-georgia u-text u-text-4">
                 {" "}
-                Utilizando como sustrato la tierra de tu jardín.&nbsp;Tendrás
+                Utilizando como sustrato la tierra de tu jardín.Tendrás
                 que asegurarte de que es lo suficientemente buena y, si es una
                 tierra pobre, utilizar un fertilizante o abono que la enriquezca
                 lo suficiente, como el compost.
@@ -251,7 +247,7 @@ export const TipoHuerta = () => {
               <p className="u-custom-font u-font-georgia u-text u-text-6">
                 {" "}
                 Añadiendo un sustrato comercial a tus bancales, mesas de cultivo
-                o macetas.&nbsp;Cómpralo en una tienda de jardinería u otra
+                o macetas.Cómpralo en una tienda de jardinería u otra
                 tienda especializada.
               </p>
             </div>
@@ -271,7 +267,7 @@ export const TipoHuerta = () => {
               </div>
               <p className="u-custom-font u-font-georgia u-text u-text-8">
                 {" "}
-                Utilizando un sustrato acuapónico.&nbsp;La acuaponía es una
+                Utilizando un sustrato acuapónico.La acuaponía es una
                 técnica súper novedosa que utiliza PECES para fertilizar una
                 especie de sustrato hidropónico del que se nutren las plantas.
               </p>
@@ -322,7 +318,7 @@ export const TipoHuerta = () => {
   <section className="u-align-center u-clearfix u-section-9" id="carousel_47d0">
     <div className="u-clearfix u-sheet u-sheet-1">
       <h2 className="u-align-right u-custom-font u-font-georgia u-text u-text-1">
-        Tipo de huertos según el sistema de riego
+        Tipo de huertos según el sistema de riego:
       </h2>
       <div className="u-border-2 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1" />
       <div className="u-list u-list-1">
