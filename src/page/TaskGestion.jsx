@@ -9,7 +9,7 @@ const TaskGestion = () => {
   const [tasksDes, setTasksDes] = useState("");
   const { id } = useParams();
   const getTasks = async () => {
-    const res = await fetch("http://localhost:4000/api/tareas/", {
+    const res = await fetch(`http://localhost:4000/api/tareas/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -18,6 +18,16 @@ const TaskGestion = () => {
     const data = await res.json();
     setTasks(data);
     console.log(data);
+  }
+
+  const handleClick = async (id) => {
+    await fetch(`http://localhost:4000/api/tareas/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    getTasks();
   }
 
   useEffect(() => {
@@ -52,35 +62,38 @@ const TaskGestion = () => {
   return (
     <>
       <div className="body-gestion ">
-        <form action="" onSubmit={handleSubmit}>
-          <h1>Crear Tarea</h1>
+        <form className="d-flex justify-content-center align-items-center flex-column m-3 " action="" onSubmit={handleSubmit}>
+          <h1 className="text-dark m-3">Crear Tarea</h1>
           {error && <p className="error">No se puede enviar un campo vacio</p>}
           <input
+          className="m-3"
             type="text"
             placeholder="Nombre de la Tarea"
             value={tasksData}
             onChange={handleChange}
           />
           <input
+          className="m-3"
             type="text"
             placeholder="Descripcion de la tarea"
             value={tasksDes}
             onChange={handleChangeDes}
           />
-          <button type="submit">Crear Tarea</button>
+          <button type="submit ">Crear Tarea</button>
         </form>
-        <div className="div-form">
-          <h1>Lista de Huertas</h1>
-          <ul>
+        <div className="div-form overflow-auto">
+          <h1 className="text-dark">Lista de Tareas</h1>
+          <ul className=" overflow-auto" >
             {tasks.length > 0 ? (
               tasks.map((task, id) => (
-                <li key={id}>
+                <li className="text-dark" key={id}>
                   {task.nombre}
                   - {task.descripcion}
+                <button className="btn btn-danger m-3" onClick={() => handleClick(task.id)}>Eliminar</button>
                 </li>
               ))
             ) : (
-              <li>No hay Tareas</li>
+              <li className="text-dark">No hay Tareas</li>
             )}
           </ul>
         </div>

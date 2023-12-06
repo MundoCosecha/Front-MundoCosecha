@@ -27,7 +27,7 @@ export const NavbarGestion = () => {
             <div className="navbar-nav">
               <Link to={"/Gestion"}>Crear huerta</Link>
               <Link to={"/Calendar"}>Calendario</Link>
-              <Link to={"/TasksList"}>Tareas</Link>
+             
             </div>
           </div>
         </div>

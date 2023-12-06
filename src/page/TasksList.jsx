@@ -30,7 +30,7 @@ export const TasksList = () => {
   return (
     <>
       <NavbarGestion />
-      <h1>{huerta.nombre}</h1>
+      <h1 className="text-dark text-center">{huerta.nombre}</h1>
       <TaskGestion />
     </>
   );

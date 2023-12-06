@@ -12,6 +12,16 @@ export const Crearhuerta = () => {
 
   const [huertaData, setHuertaData] = useState("");
 
+  const handleEliminarHuerta = async (id) => {
+    await fetch(`http://localhost:4000/api/huertas/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    getHuerta();
+  }
+
   const getHuerta = async () => {
     const res = await fetch("http://localhost:4000/api/huertas", {
       method: "GET",
@@ -68,22 +78,22 @@ export const Crearhuerta = () => {
           />
           <button type="submit">Crear Huerta</button>
         </form>
-        <div className="div-form">
-          <h1>Lista de Huertas</h1>
-          <ul>
+        <div className="div-form text-dark">
+          <h1 className="text-dark">Lista de Huertas</h1>
+          <ul className="text-dark">
             {huertas.length > 0 ? (
               huertas.map((huerta, id) => (
 
-                <li key={id}>
-                  <Link onClick={
+                <li className="text-dark" key={id}>
+                  <Link className="text-dark" onClick={
                     (e) => {
                       e.preventDefault();
                       handleClick(huerta.id)
                     }
-                  }>{huerta.nombre}</Link></li>
+                  }>{huerta.nombre}</Link> <button className="btn btn-danger m-3" onClick={() => handleEliminarHuerta(huerta.id)}>Eliminar</button></li>
               ))
             ) : (
-              <li>No hay huertas</li>
+              <li className="text-dark">No hay huertas</li>
             )}
           </ul>
         </div>
