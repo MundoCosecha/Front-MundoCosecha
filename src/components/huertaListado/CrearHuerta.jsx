@@ -1,35 +1,42 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import "../../Style/gestion.css";
+import { useNavigate, Link } from "react-router-dom";
 
 export const Crearhuerta = () => {
-  const [huerta, setHuerta] = useState([]);
 
-  const [huertaData, setHuertaData] = useState({
-    nombre: "",
-  });
+  const navigate = useNavigate();
+
+  const [huertas, setHuertas] = useState([]);
+
+  const [error, setError] = useState(false)
+
+  const [huertaData, setHuertaData] = useState("");
+
+  const getHuerta = async () => {
+    const res = await fetch("http://localhost:4000/api/huertas", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    setHuertas(data);
+    console.log(data);
+  };
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch("http://localhost:4000/api/huertas", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const fetchedData = await res.json();
-        setHuerta(fetchedData);
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
-      }
-    }
-    fetchData();
+    getHuerta();
   }, []);
+
+  const handleClick = async (id) => {
+    navigate(`/TasksList/${id}`)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(huertaData);
-    if (!huertaData) {
+    if (huertaData === "") {
+      setError(true)
       return;
     }
     await fetch("http://localhost:4000/api/huertas", {
@@ -37,8 +44,10 @@ export const Crearhuerta = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(huertaData),
+      body: JSON.stringify({ nombre: huertaData }),
     });
+    setHuertaData("");
+    getHuerta();
   };
 
   const handleChange = (e) => {
@@ -50,6 +59,7 @@ export const Crearhuerta = () => {
       <div className="body-gestion ">
         <form action="" onSubmit={handleSubmit}>
           <h1>Crear Huerta</h1>
+          {error && <p className="error">No se puede enviar un campo vacio</p>}
           <input
             type="text"
             placeholder="Nombre de la huerta"
@@ -61,9 +71,16 @@ export const Crearhuerta = () => {
         <div className="div-form">
           <h1>Lista de Huertas</h1>
           <ul>
-            {huerta.length > 0 ? (
-              huerta.map((huertaItem) => (
-                <li key={huertaItem.id}>{huertaItem.nombre}</li>
+            {huertas.length > 0 ? (
+              huertas.map((huerta, id) => (
+
+                <li key={id}>
+                  <Link onClick={
+                    (e) => {
+                      e.preventDefault();
+                      handleClick(huerta.id)
+                    }
+                  }>{huerta.nombre}</Link></li>
               ))
             ) : (
               <li>No hay huertas</li>

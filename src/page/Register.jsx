@@ -57,8 +57,10 @@ export const Register = () => {
             // se obtiene la respuesta del servidor
             const data = await res.json();
             // se envia la respuesta al context
-            console.log(data)
+            console.log(data);
             register(data);
+            localStorage.setItem("userId", JSON.stringify({ userId: data.new_user.id }));
+            localStorage.setItem("token", data.token);
             // se navega a la pagina de inicio
             navigate("/");
         } else {

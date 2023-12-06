@@ -50,6 +50,9 @@ export const Login = () => {
       const data = await res.json();
       // se envia la respuesta al context
       login(data);
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("userId", JSON.stringify({ userId: data.user_name.id }));
       // se navega a la pagina de inicio
       navigate("/");
     } else {
