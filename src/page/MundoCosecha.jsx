@@ -89,8 +89,7 @@ export const MundoCosecha = () => {
             />
             <p className="descripcion">
               Documentación Huertas: Guías y recursos para crear y gestionar
-              huertas urbanas, accesibles desde dispositivos móviles y comunidad
-              colaborativa.
+              huertas urbanas.
             </p>
             <Link to="/documentacion">
               <button className="btn-1">ir</button>

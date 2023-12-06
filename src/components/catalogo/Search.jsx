@@ -1,26 +1,34 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import catalogo from "../../helpers/catalogo.json";
+import { Cards } from "./Cards";
 
 export const Search = () => {
   const { plantas } = JSON.parse(JSON.stringify(catalogo));
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredPlants, setFilteredPlants] = useState([]);
 
-  const [search, setSearch] = useState({
-    nombre: "all",
-    tipo: "all",
-    especie: "all",
-  });
+  const handleSearch = () => {
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
-  const filtroPlantas = (plantas) => {
-    return plantas.filter((plantas) => {
+    const filteredPlants = plantas.filter((planta) => {
+      const lowerCaseNombre = planta.nombre.toLowerCase();
+      const lowerCaseTipo = planta.tipo.toLowerCase();
+      const lowerCaseEspecie = planta.especie.toLowerCase();
+
       return (
-        plantas.nombre.toLowerCase() === search.nombre.toLowerCase() &&
-        (plantas.especie.toLowerCase() === search.especie.toLowerCase() ||
-          search.especie === "all") &&
-        (plantas.tipo.toLowerCase() === search.tipo.toLowerCase() ||
-          search.tipo === "all")
+        lowerCaseNombre.includes(lowerCaseSearchTerm) ||
+        lowerCaseTipo.includes(lowerCaseSearchTerm) ||
+        lowerCaseEspecie.includes(lowerCaseSearchTerm)
       );
     });
+
+    setFilteredPlants(filteredPlants);
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -31,11 +39,19 @@ export const Search = () => {
           type="search"
           placeholder="Search"
           aria-label="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyPress={handleKeyPress}
         />
-        <button className="btn btn-success " type="submit">
+        <button
+          className="btn btn-success"
+          type="button"
+          onClick={handleSearch}
+        >
           Search
         </button>
       </div>
+      <Cards plantas={filteredPlants.length > 0 ? filteredPlants : plantas} />
     </>
   );
 };
